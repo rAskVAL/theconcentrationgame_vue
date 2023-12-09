@@ -55,7 +55,7 @@ function restartGame() {
 // handle click when selected card pressed
 
 function handleClick(card) {
-  if (gameState.firstCard) {
+  if (gameState.firstCard && gameState.firstCard !== card) {
     gameState.secondCard = card;
   } else {
     gameState.firstCard = card;
