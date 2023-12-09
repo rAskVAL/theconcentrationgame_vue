@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-800 text-white;
+}
+
+.active-btn {
+  @apply rounded-lg border-2 border-primaryGreen bg-primaryGreen bg-opacity-10 px-3 py-2 font-semibold text-white transition-all hover:border-opacity-30 hover:text-white;
+}
+
+.active-link {
+  @apply text-primaryGreen hover:text-primaryGreen;
+}
+
+.active-mobile {
+  @apply w-full border-l border-primaryGreen bg-gradient-to-l from-primaryGreen via-primaryDark to-primaryDark p-4 hover:text-primaryGreen;
+}
+
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-back,
+.flip-card-front {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
