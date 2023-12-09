@@ -2,7 +2,9 @@
 import { Navlinks } from "../../constants/Index";
 import { RouterLink } from "vue-router";
 import { ref } from "vue";
+import SelectModal from "./SelectModal.vue";
 const open = ref(false);
+const modal = ref(false);
 </script>
 
 <template>
@@ -33,6 +35,20 @@ const open = ref(false);
           >
             {{ link.title }}
           </RouterLink>
+        </div>
+        <div class="px-3 py-2 relative">
+          <div
+            class="flex gap-1 items-center cursor-pointer"
+            @click="modal = !modal"
+          >
+            <i class="ti ti-brand-vue"></i>
+            <p>Vue.js Version</p>
+            <i
+              class="ti ti-chevron-down transition-all"
+              :class="modal && '-rotate-90'"
+            ></i>
+          </div>
+          <SelectModal v-show="modal" />
         </div>
       </ul>
       <i

@@ -6,7 +6,7 @@ import { RouterLink } from "vue-router";
   <div
     class="container mx-auto flex flex-col items-center justify-center px-10"
   >
-    <img v-motion-slide-bottom src="/public/img/logo.png " alt="logo" />
+    <img v-motion-slide-bottom src="/img/logo.png " alt="logo" />
     <h1 class="mt-10 text-center uppercase">
       Welcome to the concentration game! To start a game please press
       <RouterLink class="text-primaryGreen underline" to="/play">

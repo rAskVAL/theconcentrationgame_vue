@@ -1,9 +1,14 @@
 <script setup>
-import { ref, watchEffect } from "vue";
+import { ref, watchEffect, onMounted } from "vue";
 
 const isFlipped = ref(false);
-const props = defineProps({ card: Object, gameState: Object });
+const props = defineProps({ card: Object, gameState: Object, index: Number });
 const emit = defineEmits(["handle-click"]);
+
+onMounted(() => {
+  const element = document.querySelectorAll(".card");
+  VanillaTilt.init(element);
+});
 
 watchEffect(() => {
   if (
@@ -31,6 +36,7 @@ function rotateCard() {
 </script>
 <template>
   <div
+    glare
     v-motion
     :initial="{
       opacity: 0,
@@ -47,11 +53,12 @@ function rotateCard() {
         stiffness: 250,
         damping: 25,
         mass: 0.5,
+        opacity: { delay: Math.random() * 200 },
       },
     }"
-    :hovered="{ scale: 1.03 }"
+    :hovered="{ opacity: 1 }"
     :style="{ transformStyle: 'preserve-3d' }"
-    class="flip-card h-36 sm:h-40 sm:w-40"
+    class="card flip-card h-36 sm:h-40 sm:w-40 opacity-70 transition-200"
   >
     <div
       :style="

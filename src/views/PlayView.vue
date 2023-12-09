@@ -116,7 +116,7 @@ watchEffect(() => {
       />
     </div>
     <div
-      class="bottom-10 mb-4 flex h-fit w-full flex-col gap-4 rounded-lg border-2 border-white bg-primaryDark p-8 md:absolute md:right-8 md:top-0 md:z-50 md:w-64"
+      class="bottom-10 mb-4 flex h-fit w-full flex-col gap-4 rounded-lg border-2 border-white bg-primaryDark p-8 md:absolute md:right-8 md:top-0 md:w-64"
     >
       <div class="flex flex-col items-center rounded-lg bg-white/5 p-2">
         <p>
@@ -147,7 +147,7 @@ watchEffect(() => {
             <p>Turns: {{ gameState.turns }}</p>
           </div>
         </div>
-        <ResetButton restartGame="{restartGame}">Restart Game</ResetButton>
+        <ResetButton @restart-game="restartGame">Restart Game</ResetButton>
       </div>
     </div>
   </div>
